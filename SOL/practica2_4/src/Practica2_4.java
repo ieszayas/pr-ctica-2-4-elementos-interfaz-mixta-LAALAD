@@ -268,7 +268,8 @@ public class Practica2_4 extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(50, 50, 50)
-                                .addComponent(caja_texto, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(caja_texto, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -424,6 +425,9 @@ public class Practica2_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_caja_textoKeyReleased
 
     private void caja_texto_correoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_texto_correoKeyReleased
+      String entrada = caja_texto_correo.getText();
+        caja_texto_correo_espejo.setText(entrada);
+      String validado = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
       
     }//GEN-LAST:event_caja_texto_correoKeyReleased
 
