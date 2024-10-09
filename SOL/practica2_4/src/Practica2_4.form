@@ -143,6 +143,11 @@
                                   <Component id="barra" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="tick" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -174,7 +179,7 @@
                               <Component id="op6" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="boton_onoff" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="11" max="32767" attributes="0"/>
+                          <EmptySpace pref="7" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="caja_texto_correo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -186,6 +191,8 @@
                           <Component id="caja_spinner" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="caja_opciones" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="tick" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -335,11 +342,11 @@
         <Component class="javax.swing.JToggleButton" name="boton_onoff">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\adria\Documents\GitHub\pr-ctica-2-4-elementos-interfaz-mixta-LAALAD\media\b_on.png"/>
+              <Image iconType="3" name="/media/b_off.png"/>
             </Property>
             <Property name="rolloverEnabled" type="boolean" value="false"/>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\adria\Documents\GitHub\pr-ctica-2-4-elementos-interfaz-mixta-LAALAD\media\b_off.png"/>
+              <Image iconType="3" name="/media/b_on.png"/>
             </Property>
           </Properties>
           <Events>
@@ -425,12 +432,12 @@
         <Component class="javax.swing.JToggleButton" name="boton_onoff_espejo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\adria\Documents\GitHub\pr-ctica-2-4-elementos-interfaz-mixta-LAALAD\media\b_on.png"/>
+              <Image iconType="3" name="/media/b_off.png"/>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="rolloverEnabled" type="boolean" value="false"/>
             <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\adria\Documents\GitHub\pr-ctica-2-4-elementos-interfaz-mixta-LAALAD\media\b_off.png"/>
+              <Image iconType="3" name="/media/b_on.png"/>
             </Property>
           </Properties>
           <Events>
@@ -443,6 +450,11 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator3">
+        </Component>
+        <Component class="javax.swing.JLabel" name="tick">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jLabel3"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

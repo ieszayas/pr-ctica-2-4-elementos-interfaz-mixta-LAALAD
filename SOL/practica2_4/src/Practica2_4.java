@@ -1,3 +1,7 @@
+
+import java.awt.Color;
+import javax.swing.border.LineBorder;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -55,6 +59,7 @@ public class Practica2_4 extends javax.swing.JFrame {
         boton_onoff_espejo = new javax.swing.JToggleButton();
         barra_espejo = new javax.swing.JSlider();
         jSeparator3 = new javax.swing.JSeparator();
+        tick = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -143,9 +148,9 @@ public class Practica2_4 extends javax.swing.JFrame {
             }
         });
 
-        boton_onoff.setIcon(new javax.swing.ImageIcon("C:\\Users\\adria\\Documents\\GitHub\\pr-ctica-2-4-elementos-interfaz-mixta-LAALAD\\media\\b_on.png")); // NOI18N
+        boton_onoff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/b_off.png"))); // NOI18N
         boton_onoff.setRolloverEnabled(false);
-        boton_onoff.setSelectedIcon(new javax.swing.ImageIcon("C:\\Users\\adria\\Documents\\GitHub\\pr-ctica-2-4-elementos-interfaz-mixta-LAALAD\\media\\b_off.png")); // NOI18N
+        boton_onoff.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/media/b_on.png"))); // NOI18N
         boton_onoff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_onoffActionPerformed(evt);
@@ -187,10 +192,10 @@ public class Practica2_4 extends javax.swing.JFrame {
         caja_opciones_espejo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         caja_opciones_espejo.setEnabled(false);
 
-        boton_onoff_espejo.setIcon(new javax.swing.ImageIcon("C:\\Users\\adria\\Documents\\GitHub\\pr-ctica-2-4-elementos-interfaz-mixta-LAALAD\\media\\b_on.png")); // NOI18N
+        boton_onoff_espejo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/b_off.png"))); // NOI18N
         boton_onoff_espejo.setEnabled(false);
         boton_onoff_espejo.setRolloverEnabled(false);
-        boton_onoff_espejo.setSelectedIcon(new javax.swing.ImageIcon("C:\\Users\\adria\\Documents\\GitHub\\pr-ctica-2-4-elementos-interfaz-mixta-LAALAD\\media\\b_off.png")); // NOI18N
+        boton_onoff_espejo.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/media/b_on.png"))); // NOI18N
         boton_onoff_espejo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_onoff_espejoActionPerformed(evt);
@@ -198,6 +203,8 @@ public class Practica2_4 extends javax.swing.JFrame {
         });
 
         barra_espejo.setEnabled(false);
+
+        tick.setText("jLabel3");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -273,7 +280,11 @@ public class Practica2_4 extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(22, 22, 22))))))
+                                .addGap(22, 22, 22))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(tick)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,7 +307,7 @@ public class Practica2_4 extends javax.swing.JFrame {
                             .addComponent(op3)
                             .addComponent(op6)
                             .addComponent(boton_onoff))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(caja_texto_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -306,6 +317,8 @@ public class Practica2_4 extends javax.swing.JFrame {
                         .addComponent(caja_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(caja_opciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tick)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -427,8 +440,17 @@ public class Practica2_4 extends javax.swing.JFrame {
     private void caja_texto_correoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_texto_correoKeyReleased
       String entrada = caja_texto_correo.getText();
         caja_texto_correo_espejo.setText(entrada);
+        LineBorder rojo = new LineBorder(Color.RED);
+        LineBorder verde = new LineBorder(Color.GREEN);
       String validado = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+      if(entrada.matches(validado)){
+          caja_texto_correo.setBorder(rojo);
+          caja_texto_correo_espejo.setBorder(rojo);
+          return;
+      }
       
+          caja_texto_correo.setBorder(verde);
+          caja_texto_correo_espejo.setBorder(verde);
     }//GEN-LAST:event_caja_texto_correoKeyReleased
 
     private void barraMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_barraMouseReleased
@@ -510,5 +532,6 @@ public class Practica2_4 extends javax.swing.JFrame {
     private javax.swing.JCheckBox op5_espejo;
     private javax.swing.JCheckBox op6;
     private javax.swing.JCheckBox op6_espejo;
+    private javax.swing.JLabel tick;
     // End of variables declaration//GEN-END:variables
 }
