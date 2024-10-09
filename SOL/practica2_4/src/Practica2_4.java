@@ -6,7 +6,6 @@ import javax.swing.border.LineBorder;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author adria
@@ -18,6 +17,10 @@ public class Practica2_4 extends javax.swing.JFrame {
      */
     public Practica2_4() {
         initComponents();
+        tick.setVisible(false);
+        tick1.setVisible(false);
+        correoOK.setVisible(false);
+        correoOK_espejo.setVisible(false);
     }
 
     /**
@@ -30,6 +33,8 @@ public class Practica2_4 extends javax.swing.JFrame {
     private void initComponents() {
 
         jSeparator2 = new javax.swing.JSeparator();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         op1 = new javax.swing.JRadioButton();
         op3 = new javax.swing.JRadioButton();
@@ -60,9 +65,13 @@ public class Practica2_4 extends javax.swing.JFrame {
         barra_espejo = new javax.swing.JSlider();
         jSeparator3 = new javax.swing.JSeparator();
         tick = new javax.swing.JLabel();
+        tick1 = new javax.swing.JLabel();
+        correoOK = new javax.swing.JLabel();
+        correoOK_espejo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        buttonGroup1.add(op1);
         op1.setText("Opción 1");
         op1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,6 +79,7 @@ public class Practica2_4 extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(op3);
         op3.setText("Opción 3");
         op3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +87,7 @@ public class Practica2_4 extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(op2);
         op2.setText("Opción 2");
         op2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,11 +140,6 @@ public class Practica2_4 extends javax.swing.JFrame {
                 caja_spinnerStateChanged(evt);
             }
         });
-        caja_spinner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                caja_spinnerMouseClicked(evt);
-            }
-        });
 
         caja_opciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         caja_opciones.addActionListener(new java.awt.event.ActionListener() {
@@ -148,21 +154,24 @@ public class Practica2_4 extends javax.swing.JFrame {
             }
         });
 
-        boton_onoff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/b_off.png"))); // NOI18N
+        boton_onoff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/b_off.png"))); // NOI18N
         boton_onoff.setRolloverEnabled(false);
-        boton_onoff.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/media/b_on.png"))); // NOI18N
+        boton_onoff.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/b_on.png"))); // NOI18N
         boton_onoff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_onoffActionPerformed(evt);
             }
         });
 
+        buttonGroup2.add(op1_espejo);
         op1_espejo.setText("Opción 1");
         op1_espejo.setEnabled(false);
 
+        buttonGroup2.add(op2_espejo);
         op2_espejo.setText("Opción 2");
         op2_espejo.setEnabled(false);
 
+        buttonGroup2.add(op3_espejo);
         op3_espejo.setText("Opción 3");
         op3_espejo.setEnabled(false);
         op3_espejo.addActionListener(new java.awt.event.ActionListener() {
@@ -192,10 +201,10 @@ public class Practica2_4 extends javax.swing.JFrame {
         caja_opciones_espejo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         caja_opciones_espejo.setEnabled(false);
 
-        boton_onoff_espejo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/b_off.png"))); // NOI18N
+        boton_onoff_espejo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/b_off.png"))); // NOI18N
         boton_onoff_espejo.setEnabled(false);
         boton_onoff_espejo.setRolloverEnabled(false);
-        boton_onoff_espejo.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/media/b_on.png"))); // NOI18N
+        boton_onoff_espejo.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/b_on.png"))); // NOI18N
         boton_onoff_espejo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_onoff_espejoActionPerformed(evt);
@@ -204,20 +213,20 @@ public class Practica2_4 extends javax.swing.JFrame {
 
         barra_espejo.setEnabled(false);
 
-        tick.setText("jLabel3");
+        tick.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tick.jpg"))); // NOI18N
+
+        tick1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tick.jpg"))); // NOI18N
+
+        correoOK.setForeground(new java.awt.Color(153, 153, 153));
+        correoOK.setText("Correo validado");
+
+        correoOK_espejo.setForeground(new java.awt.Color(153, 153, 153));
+        correoOK_espejo.setText("Correo validado");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(237, 237, 237)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(caja_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(caja_opciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(boton_onoff)
-                .addGap(84, 84, 84))
             .addComponent(jSeparator1)
             .addComponent(jSeparator3)
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -241,8 +250,15 @@ public class Practica2_4 extends javax.swing.JFrame {
                                         .addComponent(jLabel2)
                                         .addGap(18, 18, 18)
                                         .addComponent(caja_texto_correo_espejo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(50, 50, 50)
-                                .addComponent(caja_texto_espejo, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(50, 50, 50)
+                                        .addComponent(caja_texto_espejo, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tick1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(correoOK_espejo))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(231, 231, 231)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,10 +296,21 @@ public class Practica2_4 extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(22, 22, 22))
+                                .addGap(22, 22, 22))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(188, 188, 188)
+                        .addComponent(tick)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(tick)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(caja_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(caja_opciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(boton_onoff)
+                                .addGap(84, 84, 84))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(correoOK)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -307,18 +334,19 @@ public class Practica2_4 extends javax.swing.JFrame {
                             .addComponent(op3)
                             .addComponent(op6)
                             .addComponent(boton_onoff))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(caja_texto_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(caja_texto_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tick))
                         .addGap(18, 18, 18))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(caja_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(caja_opciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tick)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(correoOK)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -349,7 +377,10 @@ public class Practica2_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(caja_texto_correo_espejo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(caja_texto_correo_espejo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(correoOK_espejo)
+                                .addComponent(tick1)))))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -429,38 +460,46 @@ public class Practica2_4 extends javax.swing.JFrame {
     private void caja_textoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_textoKeyReleased
         String texto = caja_texto.getText();
         String al_reves = "";
-
         for (int i = texto.length() - 1; i >= 0; i--) {
             al_reves += texto.charAt(i);
         }
-
         caja_texto_espejo.setText(al_reves);
     }//GEN-LAST:event_caja_textoKeyReleased
 
-    private void caja_texto_correoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_texto_correoKeyReleased
-      String entrada = caja_texto_correo.getText();
-        caja_texto_correo_espejo.setText(entrada);
-        LineBorder rojo = new LineBorder(Color.RED);
+    private void validado() {
         LineBorder verde = new LineBorder(Color.GREEN);
-      String validado = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
-      if(entrada.matches(validado)){
-          caja_texto_correo.setBorder(rojo);
-          caja_texto_correo_espejo.setBorder(rojo);
-          return;
-      }
-      
-          caja_texto_correo.setBorder(verde);
-          caja_texto_correo_espejo.setBorder(verde);
+        tick.setVisible(true);
+        tick1.setVisible(true);
+        caja_texto_correo.setBorder(verde);
+        caja_texto_correo_espejo.setBorder(verde);
+        correoOK.setVisible(true);
+        correoOK_espejo.setVisible(true);
+    }
+
+    private void noValidado() {
+        LineBorder rojo = new LineBorder(Color.RED);
+        caja_texto_correo.setBorder(rojo);
+        caja_texto_correo_espejo.setBorder(rojo);
+        tick.setVisible(false);
+        tick1.setVisible(false);
+        correoOK.setVisible(false);
+        correoOK_espejo.setVisible(false);
+    }
+
+    private void caja_texto_correoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_texto_correoKeyReleased
+        String entrada = caja_texto_correo.getText();
+        caja_texto_correo_espejo.setText(entrada);
+        String validado = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+        if (!entrada.matches(validado)) {
+            noValidado();
+            return;
+        }
+        validado();
     }//GEN-LAST:event_caja_texto_correoKeyReleased
 
     private void barraMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_barraMouseReleased
-                                        
-       barra_espejo.setValue(barra.getValue());
+        barra_espejo.setValue(barra.getValue());
     }//GEN-LAST:event_barraMouseReleased
-
-    private void caja_spinnerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caja_spinnerMouseClicked
-        
-    }//GEN-LAST:event_caja_spinnerMouseClicked
 
     private void caja_spinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_caja_spinnerStateChanged
         caja_spinner_espejo.setValue(caja_spinner.getValue());
@@ -506,6 +545,8 @@ public class Practica2_4 extends javax.swing.JFrame {
     private javax.swing.JSlider barra_espejo;
     private javax.swing.JToggleButton boton_onoff;
     private javax.swing.JToggleButton boton_onoff_espejo;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> caja_opciones;
     private javax.swing.JComboBox<String> caja_opciones_espejo;
     private javax.swing.JSpinner caja_spinner;
@@ -514,6 +555,8 @@ public class Practica2_4 extends javax.swing.JFrame {
     private javax.swing.JTextField caja_texto_correo;
     private javax.swing.JTextField caja_texto_correo_espejo;
     private javax.swing.JTextField caja_texto_espejo;
+    private javax.swing.JLabel correoOK;
+    private javax.swing.JLabel correoOK_espejo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -533,5 +576,6 @@ public class Practica2_4 extends javax.swing.JFrame {
     private javax.swing.JCheckBox op6;
     private javax.swing.JCheckBox op6_espejo;
     private javax.swing.JLabel tick;
+    private javax.swing.JLabel tick1;
     // End of variables declaration//GEN-END:variables
 }
